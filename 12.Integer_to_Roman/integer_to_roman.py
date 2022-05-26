@@ -24,7 +24,7 @@ class Solution(object):
         if self.divides(500, 'D'):
             self.num = self.num - 500
         if self.divides(400, 'CD'):
-            self.num = self.num - 500
+            self.num = self.num - 400
         if self.divides(100, 'C'):
             new_number = str (self.num)[1:]
             self.num = int(new_number)
@@ -60,11 +60,3 @@ class Solution(object):
         self.operation_singles()
 
         return self.s
-        
-
-""" num = input("enter your regular number:\n")
-a = Solution()
-print (a.intToRoman(int(num))) """
-
-
-#numeros final 4, 40,400. 9, 90,900

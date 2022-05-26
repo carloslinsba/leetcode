@@ -8,6 +8,7 @@ class Roman_Int_TestCase():
         40: "XL",
         90: "XC",
         58: "LVIII",
+        401: "CDI",
         1994: "MCMXCIV"
     }
 
