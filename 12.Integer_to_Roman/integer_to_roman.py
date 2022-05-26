@@ -11,7 +11,7 @@ class Solution(object):
     }
 
     MINUS_SUBSTRINGS = ["IV", "IX", "XL", "XC", "CD", "CM"]
-    value_of_subtraction=0
+    """ value_of_subtraction=0
     #value_to_ignore=0
     s=[]
     
@@ -33,15 +33,14 @@ class Solution(object):
         for substring in self.MINUS_SUBSTRINGS:
             self.has_minus_substring(substring)
 
-    def romanToInt(self, s):
+    def intToRoman(self, s):
         self.s = s
         self.has_minus()
         value_sum= self.regular_sum(self.s)
         value = value_sum + self.value_of_subtraction
         #print(value)
-        return value
+        return value """
         
 
 s = input("enter your roman number:\n").upper()
 a = Solution()
-print(a.romanToInt(s))
