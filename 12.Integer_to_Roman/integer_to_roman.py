@@ -6,7 +6,7 @@ class Solution(object):
         for num in range (n):
             self.s+= roman_char
 
-    def divides(self, dividing_for, roman_char): #faltando os 9 e os 4
+    def divides(self, dividing_for, roman_char): 
         a:int = self.num /dividing_for
         if a>=1:
             self.int_Roman_char(int(self.num/dividing_for), roman_char=roman_char)
@@ -53,7 +53,6 @@ class Solution(object):
     
     def intToRoman(self, num:int):
         self.num = num
-        #self.has_minus()
         self.operation_thousands()
         self.operation_hundreds()
         self.operation_decimals()
