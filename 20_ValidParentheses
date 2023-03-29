@@ -1,0 +1,77 @@
+class Solution:
+    valid_dict= {
+        '(': ")",
+        '[': "]",
+        '{': "}",
+    }
+    s=''
+
+    def validOperation(self, i):
+        try:
+            if self.valid_dict.get(self.s[i]) == self.s[i+1]:
+                s1= self.s[:i] 
+                s2= self.s[i+2:]
+                self.s = s1 + s2
+                return True
+            return self.validOperation(i+1)
+        except:
+            return False
+
+    def isValid2(self, s: str) -> bool:
+     
+        length = len(s)
+        if length==0: 
+            return True
+        if (length%2!=0):
+            return False
+        self.s=s
+        while len(self.s)>0:
+            if not self.validOperation(0):
+                return False
+        return True          
+
+    def isValid(self, s: str) -> bool:
+        try:
+            dics = {
+                "(" : ")",
+                "[" : "]",
+                "{" : "}"
+            }
+            stack = []
+            for i in s:
+                if len(stack) == 0:
+                    stack.append(i)
+                else:
+                    popp = stack.pop()
+                    if i == dics[popp]:
+                        continue
+                    else:
+                        stack.append(popp)
+                        stack.append(i)
+            if len(stack) == 0:
+                return True
+            else:
+                return False
+        except Exception:
+            return False     
+
+    test= {
+        '()': True,
+        '()[]{}': True,
+        '(])': False,
+        '{[()]}': True,
+        '{[[)]}': False,
+        '(([]){})': True,
+
+
+    }
+
+a =Solution()
+for entry in a.test.keys():
+    if a.test.get(entry) == Solution().isValid(entry):
+        print("Success", entry)
+    else:
+        print("Failed", entry)
+
+
+
