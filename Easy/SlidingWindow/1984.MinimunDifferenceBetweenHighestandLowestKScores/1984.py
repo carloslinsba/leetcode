@@ -15,4 +15,6 @@ class Solution:
             
         return min_score
 
+#time complexity: O(nlogn)
+#space complexity: O(1)
 #done
