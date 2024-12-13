@@ -10,8 +10,7 @@ class Solution:
         Do not return anything, modify root in-place instead.
         """
         l = []
-        if not root:
-            return
+
         def flattenHelper(root):
             if not root:
                 return
