@@ -11,13 +11,16 @@ class Solution:
             if not root:
                 return
             if not (root.right or root.left):
-                l.append(int(s+str(root.val)))
+                v=s+str(root.val)
+                l.append(int(v))
             sumNumbersHelper(root.left,s+str(root.val))
-            sumNumbersHelper(root.left,s+str(root.val))
+            sumNumbersHelper(root.right,s+str(root.val))
+        sumNumbersHelper(root,"")
         summ=0
         for item in l:
             summ+=item
-        return item
+        return summ
 
 
-        
+#time complexity: O(n)
+#space complexity: O(n)
